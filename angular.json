@@ -36,12 +36,15 @@
             "styles": [
               "src/styles.scss",
               "node_modules/font-awesome/css/font-awesome.min.css",
-              "src/assets/app.scss"
+              "src/assets/app.scss",
+              "node_modules/slick-carousel/slick/slick.scss",
+              "node_modules/slick-carousel/slick/slick-theme.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/smartmenus/dist/jquery.smartmenus.min.js"
+              "node_modules/smartmenus/dist/jquery.smartmenus.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js"
             ]
           },
           "configurations": {

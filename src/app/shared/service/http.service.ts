@@ -16,7 +16,7 @@ export class HttpService {
   post(url: string, model: any): Observable<any> {
     const body = JSON.stringify(model);
     let httpHeader = new HttpHeaders()
-      .set('Content-Type', 'application/json');
+      .set('Content-Type', 'application/json'); //whatever content we are sending will be in json format
 
     let option = {
       headers: httpHeader
