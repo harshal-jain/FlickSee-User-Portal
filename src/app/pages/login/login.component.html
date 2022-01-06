@@ -42,7 +42,7 @@
                         <div class="form-group">
 
                             <label for="name">Password</label>
-                            <input type="text" class="form-control" formControlName="Password"
+                            <input type="password" class="form-control" formControlName="Password"
                                 placeholder="Enter Your Password"
                                 [ngClass]="{'is-invalid' : submitted && f.Password.errors}" />
                             <div *ngIf="submitted && f.Password.errors" class="col-xl-3 col-md-4 invalid-feedback">

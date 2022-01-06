@@ -39,6 +39,11 @@ export class LoginComponent implements OnInit {
       this._httpService.post(environment.BASE_API_PATH + "CustomerMaster/Login/", this.loginForm.value).subscribe(res => {
         if (res.isSuccess) {
           this._authService.Auth(res.data);
+          this.msg = this._authService.getMessage();
+          if (this.msg != "") {
+            this._toastr.error(this.msg, "Login");
+            this.loginForm.reset();
+          }
         }
         else {
           this._toastr.error("Invalid Credentials !!", "Login");

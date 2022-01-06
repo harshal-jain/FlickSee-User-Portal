@@ -1,13 +1,39 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  private loggedIn: boolean = false;
+  private message: string = "";
 
+  constructor(private router: Router) { }
+
+  // data comes as an object
   Auth(objUserDetails: any) {
+    if (objUserDetails.UserId === 0) {
+      this.loggedIn = true;
+      this.message = "please enter valid username and password !!";
+      localStorage.removeItem("userDetails");
+    } else {
+      this.loggedIn = true;
+      this.message = "";
+      localStorage.setItem("userDetails", JSON.stringify(objUserDetails));
+      this.router.navigate(['/home/shop']);
 
+    }
+  }
+
+  logout() {
+    localStorage.clear();
+    this.loggedIn = false;
+    this.router.navigate(['/home/shop']);
+
+  }
+
+  public getMessage(): string {
+    return this.message;
   }
 }

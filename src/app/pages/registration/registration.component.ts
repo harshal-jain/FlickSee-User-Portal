@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Global } from 'src/app/shared/service/global';
 import { HttpService } from 'src/app/shared/service/http.service';
@@ -16,7 +17,7 @@ export class RegistrationComponent implements OnInit {
   registerForm: FormGroup;
   submitted: boolean = false;
 
-  constructor(private _fb: FormBuilder, private _toastr: ToastrService, private _httpService: HttpService) { }
+  constructor(private router: Router, private _fb: FormBuilder, private _toastr: ToastrService, private _httpService: HttpService) { }
 
   // initialize form
   formInit() {
@@ -53,6 +54,7 @@ export class RegistrationComponent implements OnInit {
         this._toastr.success("Your Registration has been sucessfully done !!", "Registration");
         this.registerForm.reset();
         this.submitted = false;
+        this.router.navigate(['/pages/login']);
       }
       else {
         this._toastr.error(res.errors[0], "Registration");
