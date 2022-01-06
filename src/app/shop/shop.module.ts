@@ -11,6 +11,7 @@ import { ProductTabComponent } from './home/product-tab/product-tab.component';
 import { SliderComponent } from './home/slider/slider.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { SharedModule } from '../shared/shared.module';
     ShopRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    SlickCarouselModule
   ]
 })
 export class ShopModule { }
