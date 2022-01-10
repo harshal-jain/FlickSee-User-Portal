@@ -10,24 +10,25 @@
                 <div class="theme-tab">
                     <ul class="tabs tab-title">
                         <li class="current">
-                            <a>New Products</a>
+                            <a href="tab-1" >New Products</a>
                         </li>
                         <li class="">
-                            <a>Best Sellers</a>
+                            <a href="tab-2">Best Sellers</a>
                         </li>
                     </ul>
                     <div class="tab-content-cls">
-                        <div class="tab-content">
+                        <div class="tab-content" id="tab-1" >
                             <div class="no-slider row">
-                                <div class="product-box">
-                                    Show Item
+                                <div class="product-box" *ngFor="let product of products | slice:0:8" >
+                                    <app-product [product]="product"></app-product>
+
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-content">
+                        <div class="tab-content" id="tab-2">
                             <div class="no-slider row">
-                                <div class="product-box">
-                                    Show Item
+                                <div class="product-box"  *ngFor="let product of products | slice:8:16">
+                                    <app-product [product]="product"></app-product>
                                 </div>
                             </div>
                         </div>

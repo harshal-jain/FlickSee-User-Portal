@@ -12,6 +12,15 @@ import { SliderComponent } from './home/slider/slider.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { ProductComponent } from './product/product.component';
+import { CartComponent } from './product/cart/cart.component';
+import { CompareComponent } from './product/compare/compare.component';
+import { ProductDetailsComponent } from './product/product-details/product-details.component';
+import { WishlistComponent } from './product/wishlist/wishlist.component';
+import { CheckoutComponent } from './product/checkout/checkout.component';
+import { CollectionComponent } from './product/collection/collection.component';
+import { SuccessComponent } from './product/success/success.component';
+import { BarRatingModule } from 'ngx-bar-rating';
 
 
 @NgModule({
@@ -22,7 +31,15 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     ParallaxBannerComponent,
     ProductSliderComponent,
     ProductTabComponent,
-    SliderComponent
+    SliderComponent,
+    ProductComponent,
+    CartComponent,
+    CompareComponent,
+    ProductDetailsComponent,
+    WishlistComponent,
+    CheckoutComponent,
+    CollectionComponent,
+    SuccessComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +47,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    BarRatingModule
   ]
 })
 export class ShopModule { }
